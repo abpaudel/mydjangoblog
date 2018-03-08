@@ -1,5 +1,0 @@
-Mezzanine==4.2.3
-gunicorn==19.7.1
-psycopg2==2.7.1
-djangorestframework==3.6.3
-fuzzywuzzy[speedup]

@@ -92,7 +92,39 @@ USE_MODELTRANSLATION = False
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+
+COMMENTS_USE_RATINGS = False
+POSTS_USE_RATINGS = False
+###################
+# DEPLOY SETTINGS #
+###################
+
+# Domains for public site
+ALLOWED_HOSTS = ['apaudel.com.np','www.apaudel.com.np']
+
+DEBUG = True
+
+# Make these unique, and don't share it with anybody.
+SECRET_KEY = "fs3ro^(^cl4v=z=3)x9xyi*((xc*am899&_#k-%^5d_uw95l%_"
+NEVERCACHE_KEY = "stv6^1-t$-vpea%gkpa4hdoo43b7ey7)qpx(&55*z-u_38fy2h"
+
+DATABASES = {
+    "default": {
+        # Ends with "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
+        "ENGINE": "django.db.backends.sqlite3",
+        # DB name or path to database file if using sqlite3.
+        "NAME": "mydjangoblog.db",
+        # Not used with sqlite3.
+        "USER": "apaudel@apaudel",
+        # Not used with sqlite3.
+        "PASSWORD": "Perfection13",
+        # Set to empty string for localhost. Not used with sqlite3.
+        "HOST": "apaudel.postgres.database.azure.com",
+        # Set to empty string for default. Not used with sqlite3.
+        "PORT": "5432",
+    }
+}
+
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -134,28 +166,6 @@ AUTHENTICATION_BACKENDS = ("mezzanine.core.auth_backends.MezzanineBackend",)
 # The numeric mode to set newly-uploaded files to. The value should be
 # a mode you'd pass directly to os.chmod.
 FILE_UPLOAD_PERMISSIONS = 0o644
-
-
-#############
-# DATABASES #
-#############
-
-DATABASES = {
-    "default": {
-        # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
-        "ENGINE": "django.db.backends.",
-        # DB name or path to database file if using sqlite3.
-        "NAME": "",
-        # Not used with sqlite3.
-        "USER": "",
-        # Not used with sqlite3.
-        "PASSWORD": "",
-        # Set to empty string for localhost. Not used with sqlite3.
-        "HOST": "",
-        # Set to empty string for default. Not used with sqlite3.
-        "PORT": "",
-    }
-}
 
 
 #########
