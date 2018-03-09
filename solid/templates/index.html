@@ -1,281 +1,390 @@
-{% extends "base.html" %}
-{% load i18n staticfiles mezzanine_tags blog_tags %}
+{% load i18n staticfiles %}
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
 
-{% block meta_title %}{% trans "Home" %}{% endblock %}
-{% block title_wrapper%}
-{% endblock %}
-{% block all_content %}
-{% block left_wrapper%}
-{% endblock %}
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Abhishek Paudel</title>
+	<meta name="description" content="I completed my Bachelor's degree in Computer Engineering from Tribhuvan University, Institute of Engineering, Pulchowk Campus. I am currently looking forward to building my career in the field of AI/ML/DL.">
+	<meta name="author" content="">
 
-{% block main_wrapper%}
+   <!-- Mobile Specific Metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-{% endblock %}
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="{% static "home/css/default.css" %}">
+	<link rel="stylesheet" href="{% static "home/css/layout.css" %}">
+   <link rel="stylesheet" href="{% static "home/css/media-queries.css" %}">
+   <link rel="stylesheet" href="{% static "home/css/magnific-popup.css" %}">
 
-{% block right_wrapper%}
-{% endblock %}
-<!-- *****************************************************************************************************************
-	 HEADERWRAP
-	 ***************************************************************************************************************** -->
-	<div id="headerwrap">
-	    <div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-					<h3>Show your work with this beautiful theme</h3>
-					<h1>Eyecatching Mezzanine Theme</h1>
-					<h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h5>
-					<h5>More Lorem Ipsum added here too.</h5>				
-				</div>
-				<div class="col-lg-8 col-lg-offset-2 himg">
-					<img src="{% static "img/browser.png" %}" class="img-responsive">
-				</div>
-			</div><!-- /row -->
-	    </div> <!-- /container -->
-	</div><!-- /headerwrap -->
+   <!-- Script
+   ================================================== -->
+	<script src="{% static "home/js/modernizr.js" %}"></script>
 
-	<!-- *****************************************************************************************************************
-	 SERVICE LOGOS
-	 ***************************************************************************************************************** -->
-	 <div id="service">
-	 	<div class="container">
- 			<div class="row centered">
- 				<div class="col-md-4">
- 					<i class="fa fa-heart-o"></i>
- 					<h4>Handsomely Crafted</h4>
- 					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
- 					<p><br/><a href="#" class="btn btn-theme">More Info</a></p>
- 				</div>
- 				<div class="col-md-4">
- 					<i class="fa fa-flask"></i>
- 					<h4>Retina Ready</h4>
- 					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
- 					<p><br/><a href="#" class="btn btn-theme">More Info</a></p>
- 				</div>
- 				<div class="col-md-4">
- 					<i class="fa fa-trophy"></i>
- 					<h4>Quality Theme</h4>
- 					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
- 					<p><br/><a href="#" class="btn btn-theme">More Info</a></p>
- 				</div>		 				
-	 		</div>
-	 	</div><! --/container -->
-	 </div><! --/service -->
-	 
-	<!-- *****************************************************************************************************************
-	 PORTFOLIO SECTION
-	 ***************************************************************************************************************** -->
-	 <div id="portfoliowrap">
-        <h3>LATEST WORKS</h3>
+   <!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="{% static "img/favicon.ico"  %}">
 
-        <div class="portfolio-centered">
-            <div class="recentitems portfolio">
-				<div class="portfolio-item graphic-design">
-					<div class="he-wrap tpl6">
-					<img src="{% static "img/portfolio/portfolio_09.jpg" %}" alt="">
-						<div class="he-view">
-							<div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
-                                <a data-rel="prettyPhoto" href="{% static "img/portfolio/portfolio_09.jpg" %}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                                <a href="#" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
-                        	</div><!-- he bg -->
-						</div><!-- he view -->		
-					</div><!-- he wrap -->
-				</div><!-- end col-12 -->
-                            
-                <div class="portfolio-item web-design">
-                    <div class="he-wrap tpl6">
-					<img src="{% static "img/portfolio/portfolio_02.jpg" %}" alt="">
-						<div class="he-view">
-							<div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" data-animate="fadeInDown">A Web Design Item</h3>
-                                <a data-rel="prettyPhoto" href="{% static "img/portfolio/portfolio_02.jpg" %}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                                <a href="#" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
-                        	</div><!-- he bg -->
-						</div><!-- he view -->		
-					</div><!-- he wrap -->
-				</div><!-- end col-12 -->
+</head>
+
+<body>
+
+   <!-- Header
+   ================================================== -->
+   <header id="home">
+
+      <nav id="nav-wrap">
+
+         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+
+         <ul id="nav" class="nav">
+            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
+            <li><a class="smoothscroll" href="#about">About</a></li>
+	         <li><a class="smoothscroll" href="#resume">Resume</a></li>
+         </ul> <!-- end #nav -->
+
+      </nav> <!-- end #nav-wrap -->
+
+      <div class="row banner">
+         <div class="banner-text">
+            <h1 class="responsive-headline">I'm Abhishek Paudel.</h1>
+            <h3>If someday I could understand myself, I bet I'd tell you.<br>
+            	<span>#ComputerEngineer #AI #ML #SpaceNerd #Flutist</span></h3>
+            <hr />
+            <ul class="social">
+               <li><a href="https://www.linkedin.com/in/abpaudel"><i class="fa fa-linkedin"></i></a></li>
+               <li><a href="https://www.facebook.com/abhpdl"><i class="fa fa-facebook"></i></a></li>
+               <li><a href="https://www.twitter.com/abpaudel"><i class="fa fa-twitter"></i></a></li>
+               <li><a href="https://www.instagram/com/abpaudel"><i class="fa fa-instagram"></i></a></li>
+               <li><a href="https://plus.google.com/+AbhishekPaudel13"><i class="fa fa-google-plus"></i></a></li>
+
+            </ul>
+         </div>
+      </div>
+
+      <p class="scrolldown">
+         <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
+      </p>
+
+   </header> <!-- Header End -->
+
+
+   <!-- About Section
+   ================================================== -->
+   <section id="about">
+
+      <div class="row">
+
+         <div class="three columns">
+
+            <img class="profile-pic"  src="{% static "home/images/profilepic.jpg" %}" alt="" />
+
+         </div>
+
+         <div class="nine columns main-col">
+
+            <h2>About Me</h2>
+
+            <p>I am Abhishek Paudel. I recently completed my Bachelor's degree in Computer Engineering from Tribhuvan University, Institute of Engineering, Pulchowk Campus. I am currently looking forward to building my career in the field of AI/ML/DL.
+            </p>
+
+            <div class="row">
+
+               <div class="columns contact-details">
+
+                  <h2>Contact Details</h2>
+                  <p class="address">
+						   <span>Abhishel Paudel</span><br>
+						   <span>Kathmandu, Nepal</span><br>
+						   <span>+977-9841061471</span><br>
+                     <span>abpaudel [at] outlook [dot] com</span>
+					   </p>
+
+               </div>
+
+               <div class="columns download">
+                  <p>
+                     <a href="#" class="button"><i class="fa fa-download"></i>Download Resume</a>
+                  </p>
+               </div>
+
+            </div> <!-- end row -->
+
+         </div> <!-- end .main-col -->
+
+      </div>
+
+   </section> <!-- About Section End-->
+
+
+   <!-- Resume Section
+   ================================================== -->
+   <section id="resume">
+
+      <!-- Education -->
+      <div class="row education">
+
+         <div class="three columns header-col">
+            <h1><span>Education</span></h1>
+         </div>
+
+         <div class="nine columns main-col">
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Tribhuvan University, Institute of Engineering, Pulchowk Campus</h3>
+                  <p class="info">Bachelor's Degree in Computer Engineering <span>&bull;</span> <em class="date">2013 - 2017</em></p>
+                  <p>
+                  	Some courses studied: Computer Programming, Data Structures and Algorithms, Theory of Computation, Objected Oriented Programming, Software Engineering, Computer Graphics, Digital Logic, Calculus, Linear Algebra, Applied Mathematics, Statistics, Probability, Discrete Structure, Numerical Methods, Artificial Intelligence, Data Mining, Operating System, Big Data Systems, Distributed Systems, Information Systems, Instrumentation, Embedded System, Database Management System, Computer Network, Microprocessor, Computer Organization and Architecture, Data Communication, Simulation and Modeling, Digital Signal Analysis and Processing, Project Management
+                  </p>
+               </div>
+
+            </div> <!-- item end -->
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>St. Xavier's College</h3>
+                  <p class="info">10 + 2 Science <span>&bull;</span> <em class="date">2010 - 2012</em></p>
+                  <p>
+                  	Some courses studied: Physics, Chemistry, Biology, Mathematics
+                  </p>
+               </div>
+
+            </div> <!-- item end -->
+
+         </div> <!-- main-col end -->
+
+      </div> <!-- End Education -->
+
+
+      <!-- Work -->
+      <div class="row work">
+
+         <div class="three columns header-col">
+            <h1><span>Work</span></h1>
+         </div>
+
+         <div class="nine columns main-col">
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Fusemachines Nepal</h3>
+                  <p class="info">AI Fellow <span>&bull;</span> <em class="date">January 2018 - Present</em></p>
+
+                  <p>
+                  Fusemachines AI Fellowship is a year long program that aims to train, educate and create a pool of AI specialists who will collaborate on solutions focused on implementing AI, Natural Language Processing, Computer Vision and Machine Learning techniques to address real world problems.
+                  </p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Equal Access Nepal</h3>
+                  <p class="info">Technical Consultant <span>&bull;</span> <em class="date">January 2017 — November 2017</em></p>
+
+                  <p>
+                  Supported UNICEF Nepal CO in development and deployment U-report platform as a part of Shout Out For Health program initiated by Bill &amp; Melinda Gates Foundation. U-report is a free, SMS-based system that allows young people to speak out on what is happening in communities across their country, and work together with other community leaders and policy makers for positive change.
+              </p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Hult Prize @ Tribhuvan University</h3>
+                  <p class="info">Event Coordinator <span>&bull;</span> <em class="date">November 2016 — March 2017</em></p>
+                  Coordinated on-campus event of the Hult Prize at Tribhuvan University whose winning team competed in the regional finals in Dubai. The Hult Prize is a social impact start-up competition of students from around the world and organized by Hult Prize Foundation in partnership with Former US President Bill Clinton and the Clinton Global Initiative that grants its annual winner a seed funding of USD 1 million.
+                  <p>
+                  
+                  </p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>LOCUS Technological Festival</h3>
+                  <p class="info">Software Coordinator <span>&bull;</span> <em class="date">November 2016 — October 2017</em></p>
+
+                  <p>
+                  Coordinated various software related projects and events for the LOCUS 2017 - 14th National Technological Festival. LOCUS is one of the biggest annual technological exhibition of the nation run fully by the undergraduate students of Department of Electronics &amp; Computer and Electrical Engineering of Institute of Engineering, Pulchowk Campus that promotes technical innovation and creation along with engineering studies through interaction and healthy competition among creative minds in technical fields.
+                  </p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Nepal Participatory Action Network</h3>
+                  <p class="info">Technical Consultant <span>&bull;</span> <em class="date">June 2016 — August 2016</em></p>
+
+                  <p>
+                  Developed and deployed SMS based information and monitoring system on RapidPro platform for the UNICEF supported cash transfer program in earthquake affected districts to acquire data from local communities and present real-time/off-line analytics.
+                  </p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>United Nations Children's Fund (UNICEF) Nepal Country Office</h3>
+                  <p class="info">Technical Consultant <span>&bull;</span> <em class="date">January 2015 — November 2015</em></p>
+
+                  <p>
+                  Developed and deployed SMS based applications on RapidPro platform like Hero Teacher Network for communication with teachers in remote districts, UNICEF Staff Security System for tracking locations of UNICEF field staffs for their security, and Voice of Youth for 'Saathi Sanga Manka Kura' radio program to communicate with youths.
+                  </p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+         </div> <!-- main-col end -->
+
+      </div> <!-- End Work -->
+
+
+      <!-- Skills -->
+      <div class="row skill">
+
+         <div class="three columns header-col">
+            <h1><span>Skills</span></h1>
+         </div>
+
+         <div class="nine columns main-col">
+
         
-                <div class="portfolio-item graphic-design">
-                    <div class="he-wrap tpl6">
-					<img src="{% static "img/portfolio/portfolio_03.jpg" %}" alt="">
-						<div class="he-view">
-							<div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
-                                <a data-rel="prettyPhoto" href="{% static "img/portfolio/portfolio_03.jpg" %}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                                <a href="#" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
-                        	</div><!-- he bg -->
-						</div><!-- he view -->		
-					</div><!-- he wrap -->
-				</div><!-- end col-12 -->
-        
-                <div class="portfolio-item graphic-design">
-                    <div class="he-wrap tpl6">
-					<img src="{% static "img/portfolio/portfolio_04.jpg" %}" alt="">
-						<div class="he-view">
-							<div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
-                                <a data-rel="prettyPhoto" href="{% static "img/portfolio/portfolio_04.jpg" %}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                                <a href="#" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
-                        	</div><!-- he bg -->
-						</div><!-- he view -->		
-					</div><!-- he wrap -->
-				</div><!-- end col-12 -->
-                                        
-                <div class="portfolio-item books">
-                    <div class="he-wrap tpl6">
-					<img src="{% static "img/portfolio/portfolio_05.jpg" %}" alt="">
-						<div class="he-view">
-							<div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" data-animate="fadeInDown">A Book Design Item</h3>
-                                <a data-rel="prettyPhoto" href="{% static "img/portfolio/portfolio_05.jpg" %}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                                <a href="#" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
-                        	</div><!-- he bg -->
-						</div><!-- he view -->		
-					</div><!-- he wrap -->
-				</div><!-- end col-12 -->
-                                        
-                <div class="portfolio-item graphic-design">
-                    <div class="he-wrap tpl6">
-					<img src="{% static "img/portfolio/portfolio_06.jpg" %}" alt="">
-						<div class="he-view">
-							<div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
-                                <a data-rel="prettyPhoto" href="{% static "img/portfolio/portfolio_06.jpg" %}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                                <a href="#" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
-                        	</div><!-- he bg -->
-						</div><!-- he view -->		
-					</div><!-- he wrap -->
-				</div><!-- end col-12 -->
-                    
-                <div class="portfolio-item books">
-                    <div class="he-wrap tpl6">
-					<img src="{% static "img/portfolio/portfolio_07.jpg" %}" alt="">
-						<div class="he-view">
-							<div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" data-animate="fadeInDown">A Book Design Item</h3>
-                                <a data-rel="prettyPhoto" href="{% static "img/portfolio/portfolio_07.jpg" %}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                                <a href="#" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
-                        	</div><!-- he bg -->
-						</div><!-- he view -->		
-					</div><!-- he wrap -->
-				</div><!-- end col-12 -->
-                    
-                <div class="portfolio-item graphic-design">
-                    <div class="he-wrap tpl6">
-					<img src="{% static "img/portfolio/portfolio_08.jpg" %}" alt="">
-						<div class="he-view">
-							<div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
-                                <a data-rel="prettyPhoto" href="{% static "img/portfolio/portfolio_08.jpg" %}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                                <a href="#" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
-                        	</div><!-- he bg -->
-						</div><!-- he view -->		
-					</div><!-- he wrap -->
-				</div><!-- end col-12 -->
-                                        
-                <div class="portfolio-item web-design">
-                    <div class="he-wrap tpl6">
-					<img src="{% static "img/portfolio/portfolio_01.jpg" %}" alt="">
-						<div class="he-view">
-							<div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" data-animate="fadeInDown">A Web Design Item</h3>
-                                <a data-rel="prettyPhoto" href="{% static "img/portfolio/portfolio_01.jpg" %}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                                <a href="#" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
-                        	</div><!-- he bg -->
-						</div><!-- he view -->		
-					</div><!-- he wrap -->
-				</div><!-- end col-12 -->
-    
-			<div class="portfolio-item books">
-                <div class="he-wrap tpl6">
-					<img src="{% static "img/portfolio/portfolio_10.jpg" %}" alt="">
-						<div class="he-view">
-							<div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" data-animate="fadeInDown">A Book Design Item</h3>
-                                <a data-rel="prettyPhoto" href="{% static "img/portfolio/portfolio_10.jpg" %}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                                <a href="#" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
-                        	</div><!-- he bg -->
-						</div><!-- he view -->		
-					</div><!-- he wrap -->
-				</div><!-- end col-12 -->
-                    
-            </div><!-- portfolio -->
-        </div><!-- portfolio container -->
-	 </div><!--/Portfoliowrap -->
-	 
-	 
-	<!-- *****************************************************************************************************************
-	 MIDDLE CONTENT
-	 ***************************************************************************************************************** -->
 
-	 <div class="container mtb">
-	 	<div class="row">
-	 		<div class="col-lg-4 col-lg-offset-1">
-		 		<h4>More About Our Agency.</h4>
-		 		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
- 				<p><br/><a href="about.html" class="btn btn-theme">More Info</a></p>
-	 		</div>
-	 		
-	 		<div class="col-lg-3">
-	 			<h4>Frequently Asked</h4>
-	 			<div class="hline"></div>
-	 			<p><a href="#">How cool is this theme?</a></p>
-	 			<p><a href="#">Need a nice good-looking site?</a></p>
-	 			<p><a href="#">Is this theme retina ready?</a></p>
-	 			<p><a href="#">Which version of Font Awesome uses?</a></p>
-	 			<p><a href="#">Free support is integrated?</a></p>
-	 		</div>
-	 		{% blog_recent_posts 5 as recent_posts %}
-	 		{% if recent_posts %}
-	 		<div class="col-lg-3">
-	 			<h4>{% trans "Recent Posts" %}</h4>
-	 			<div class="hline"></div>
-	 			{% for recent_post in recent_posts %}
-					<p>	<a href="{{ recent_post.get_absolute_url }}">{{ recent_post.title }}</a></p>
-	 			{% endfor %}
-	 			
-	 		</div>
-	 		{% endif %}
-	 		
-	 	</div><! --/row -->
-	 </div><! --/container -->
-	 
-	<!-- *****************************************************************************************************************
-	 TESTIMONIALS
-	 ***************************************************************************************************************** -->
-	 <div id="twrap">
-	 	<div class="container centered">
-	 		<div class="row">
-	 			<div class="col-lg-8 col-lg-offset-2">
-	 			<i class="fa fa-comment-o"></i>
-	 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-	 			<h4><br/>Marcel Newman</h4>
-	 			<p>WEB DESIGNER - BLACKTIE.CO</p>
-	 			</div>
-	 		</div><! --/row -->
-	 	</div><! --/container -->
-	 </div><! --/twrap -->
-	 
-	<!-- *****************************************************************************************************************
-	 OUR CLIENTS
-	 ***************************************************************************************************************** -->
-	 <div id="cwrap">
-		 <div class="container">
-		 	<div class="row centered">
-			 	<h3>OUR CLIENTS</h3>
-			 	<div class="col-lg-3 col-md-3 col-sm-3">
-			 		<img src="{% static "img/clients/client01.png" %}" class="img-responsive">
-			 	</div>
-			 	<div class="col-lg-3 col-md-3 col-sm-3">
-			 		<img src="{% static "img/clients/client02.png" %}" class="img-responsive">
-			 	</div>
-			 	<div class="col-lg-3 col-md-3 col-sm-3">
-			 		<img src="{% static "img/clients/client03.png" %}" class="img-responsive">
-			 	</div>
-			 	<div class="col-lg-3 col-md-3 col-sm-3">
-			 		<img src="{% static "img/clients/client04.png" %}" class="img-responsive">
-			 	</div>
-		 	</div><! --/row -->
-		 </div><! --/container -->
-	 </div><! --/cwrap -->
-{% endblock %}
+				<div class="bars">
+
+				   <ul class="skills">
+					   <li><span class="bar-expand ninety"></span><em>Python</em></li>
+                  	<li><span class="bar-expand ninety"></span><em>C/C++</em></li>
+						<li><span class="bar-expand seventy"></span><em>Javascript</em></li>
+						<li><span class="bar-expand eighty"></span><em>Django</em></li>
+						<li><span class="bar-expand ninety"></span><em>SQL</em></li>
+                  <li><span class="bar-expand eighty"></span><em>HTML/CSS</em></li>
+					</ul>
+
+				</div><!-- end skill-bars -->
+
+			</div> <!-- main-col end -->
+
+      </div> <!-- End skills -->
+
+   </section> <!-- Resume Section End-->
+
+
+   <!-- Testimonials Section
+   ================================================== -->
+   <section id="testimonials">
+
+      <div class="text-container">
+
+         <div class="row">
+
+            <div class="two columns header-col">
+
+               <h1><span>Client Testimonials</span></h1>
+
+            </div>
+
+            <div class="ten columns flex-container">
+
+               <div class="flexslider">
+
+                  <ul class="slides">
+
+                     <li>
+                        <blockquote>
+                           <p>We are the representatives of the cosmos; we are an example of what hydrogen atoms can do, given 15 billion years of cosmic evolution.
+                           </p>
+                           <cite>Carl Sagan</cite>
+                        </blockquote>
+                     </li> <!-- slide ends -->
+
+                  </ul>
+
+               </div> <!-- div.flexslider ends -->
+
+            </div> <!-- div.flex-container ends -->
+
+         </div> <!-- row ends -->
+
+       </div>  <!-- text-container ends -->
+
+   </section> <!-- Testimonials Section End-->
+
+
+
+   <!-- footer
+   ================================================== -->
+   <footer>
+
+      <div class="row">
+
+         <div class="twelve columns">
+
+            <ul class="social-links">
+               <li><a href="https://www.linkedin.com/in/abpaudel"><i class="fa fa-linkedin"></i></a></li>
+               <li><a href="https://www.facebook.com/abhpdl"><i class="fa fa-facebook"></i></a></li>
+               <li><a href="https://www.twitter.com/abpaudel"><i class="fa fa-twitter"></i></a></li>
+               <li><a href="https://www.instagram/com/abpaudel"><i class="fa fa-instagram"></i></a></li>
+               <li><a href="https://plus.google.com/+AbhishekPaudel13"><i class="fa fa-google-plus"></i></a></li>
+            </ul>
+
+            <ul class="copyright">
+               <li>&copy; Copyright 2018 Abhishek Paudel</li> 
+            </ul>
+
+         </div>
+
+         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
+
+      </div>
+
+   </footer> <!-- Footer End-->
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="{% static "home/js/jquery-1.10.2.min.js" %}"><\/script>')</script>
+   <script type="text/javascript" src="{% static "home/js/jquery-migrate-1.2.1.min.js" %}"></script>
+
+   <script src="{% static "home/js/jquery.flexslider.js" %}"></script>
+   <script src="{% static "home/js/waypoints.js" %}"></script>
+   <script src="{% static "home/js/jquery.fittext.js" %}"></script>
+   <script src="{% static "home/js/magnific-popup.js" %}"></script>
+   <script src="{% static "home/js/init.js" %}"></script>
+
+</body>
+
+</html>
