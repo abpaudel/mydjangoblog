@@ -38,7 +38,7 @@ urlpatterns += [
     # one out.
 
     url("^$", direct_to_template, {"template": "index.html"}, name="home"),
-    url("^cv", direct_to_template, {"template": "cv.html"}, name="cv"),
+    url("^cv/", direct_to_template, {"template": "cv.html"}, name="cv"),
     url("^api/", include('myapi.urls')),
 
 
