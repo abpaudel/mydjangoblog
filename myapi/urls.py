@@ -8,6 +8,8 @@ urlpatterns = [
 	 url(r'^locate/district/(?P<district>.+)/$', views.LocationSpecific.as_view()),
 	 url(r'^locate/zone/(?P<zone>.+)/$', views.LocationSpecific.as_view()),
 	 url(r'^locate/region/(?P<region>.+)/$', views.LocationSpecific.as_view()),
+	 url(r'^adtobs/$', views.AD_BS.as_view()),
+	 url(r'^bstoad/$', views.BS_AD.as_view()),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
