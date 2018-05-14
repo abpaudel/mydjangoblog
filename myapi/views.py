@@ -71,7 +71,10 @@ class SudokuSolver(APIView):
 		board = request.GET.get('values')
 		s = Sudoku(board)
 		s = s.backtrack()
-		solution = {'solution': s.allval_str()}
+		if s is not None:
+			solution = {'solution': s.allval_str()}
+		else:
+			solution = {'solution': 'None'}
 		serializer = SudokuSerializer(solution, many = False)
 		return Response(serializer.data)
 

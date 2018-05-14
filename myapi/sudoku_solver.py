@@ -1,4 +1,3 @@
-import sys
 import numpy as np
 
 class Sudoku():
@@ -60,27 +59,3 @@ class Sudoku():
             if result is not None:
                 return result
         return None
-
-    def ac3(self):
-        pass
-
-def main():
-    s = Sudoku(sys.argv[1])
-    s = s.backtrack()
-    outfile = open('output.txt', 'w')
-    outfile.write(s.allval_str() + ' BTS' + '\n')
-    outfile.close()
-
-def main2():
-    infile = open('sudokus_start.txt', 'r')
-    outfile = open('output.txt', 'w')
-    for line in infile:
-        s = Sudoku(line[:-1])
-        s = s.backtrack()
-        outfile.write(s.allval_str() + ' BTS' + '\n')
-    infile.close()
-    outfile.close()
-
-
-if __name__ == '__main__':
-    main()
