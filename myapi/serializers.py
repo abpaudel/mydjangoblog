@@ -15,5 +15,6 @@ class DateSerializer(serializers.Serializer):
 	month = serializers.IntegerField()
 	day = serializers.IntegerField()
 
+class SudokuSerializer(serializers.Serializer):
 
-
+	solution = serializers.CharField(max_length=81)

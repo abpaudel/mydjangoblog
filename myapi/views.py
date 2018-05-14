@@ -3,9 +3,10 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Location
-from .serializers import LocationSerializer, DateSerializer
+from .serializers import LocationSerializer, DateSerializer, SudokuSerializer
 from .cleaner import cleaner
 from .date_converter import NepaliDateConverter
+from .sudoku_solver import Sudoku
 
 class LocationList(APIView):
 
@@ -63,3 +64,14 @@ class BS_AD(APIView):
 
 	def post(self):
 		pass
+
+class SudokuSolver(APIView):
+
+	def get(self, request):
+		board = request.GET.get('values')
+		s = Sudoku(board)
+		s = s.backtrack()
+		solution = {'solution': s.allval_str()}
+		serializer = SudokuSerializer(solution, many = False)
+		return Response(serializer.data)
+
