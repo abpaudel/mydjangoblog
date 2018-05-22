@@ -18,17 +18,17 @@ class LocationList(APIView):
 	def post(self):
 		pass
 
-class LocationSpecific(APIView):
+class Locate(APIView):
 
 	def get(self, request, district = None, zone = None, region = None):
-		if district:
-			location = get_list_or_404(Location, district = cleaner(district))
-		elif zone:
-			location = get_list_or_404(Location, zone = zone.title())
-		elif region:
-			location = get_list_or_404(Location, region = region.title())
+		if 'district' in request.GET:
+			location = get_list_or_404(Location, district = cleaner(request.GET.get('district')))
+		elif 'zone' in request.GET:
+			location = get_list_or_404(Location, zone = request.GET.get('zone').title())
+		elif 'region' in request.GET:
+			location = get_list_or_404(Location, region = request.GET.get('region').title())
 		else:
-			pass
+			location = Location.objects.all()
 		serializer = LocationSerializer(location, many = True)
 		return Response(serializer.data)
 
