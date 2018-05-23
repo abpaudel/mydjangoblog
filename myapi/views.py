@@ -8,16 +8,6 @@ from .cleaner import cleaner
 from .date_converter import NepaliDateConverter
 from .sudoku_solver import Sudoku
 
-class LocationList(APIView):
-
-	def get(self, request):
-		locations = Location.objects.all()
-		serializer = LocationSerializer(locations, many = True)
-		return Response(serializer.data)
-
-	def post(self):
-		pass
-
 class Locate(APIView):
 
 	def get(self, request, district = None, zone = None, region = None):
