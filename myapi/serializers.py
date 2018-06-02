@@ -18,3 +18,7 @@ class DateSerializer(serializers.Serializer):
 class SudokuSerializer(serializers.Serializer):
 
 	solution = serializers.CharField(max_length=81)
+
+class ShitSerializer(serializers.Serializer):
+	date = serializers.CharField()
+	shit = serializers.CharField()

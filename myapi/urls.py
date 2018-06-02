@@ -8,6 +8,7 @@ urlpatterns = [
 	 url(r'^adtobs/$', views.AD_BS.as_view()),
 	 url(r'^bstoad/$', views.BS_AD.as_view()),
 	 url(r'^sudoku/$', views.SudokuSolver.as_view()),
+	 url(r'^dump/$', views.Dump.as_view()),
 
 ]
 

@@ -3,10 +3,14 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Location
-from .serializers import LocationSerializer, DateSerializer, SudokuSerializer
+from .serializers import LocationSerializer, DateSerializer, SudokuSerializer, ShitSerializer
 from .cleaner import cleaner
 from .date_converter import NepaliDateConverter
 from .sudoku_solver import Sudoku
+import datetime
+from django.core.files.storage import default_storage
+import os
+from django.conf import settings
 
 class Locate(APIView):
 
@@ -67,4 +71,24 @@ class SudokuSolver(APIView):
 			solution = {'solution': 'None'}
 		serializer = SudokuSerializer(solution, many = False)
 		return Response(serializer.data)
+
+	def post(self):
+		pass
+
+class Dump(APIView):
+
+	def get(self, request):
+		date = str(datetime.datetime.now())
+		shit = request.GET.get('shit')
+		log = {'date': date, 'shit': shit}
+		path = os.path.join(settings.MEDIA_ROOT, 'logs', 'log.csv')
+		os.makedirs(os.path.dirname(path), exist_ok=True)
+		with default_storage.open(path, 'a+') as f:
+			f.write(date + ';' + shit + '\n')
+		serializer = ShitSerializer(log, many = False)
+		return Response(serializer.data)
+
+	def post(self, request):
+		pass
+
 
