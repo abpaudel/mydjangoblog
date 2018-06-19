@@ -105,5 +105,5 @@ urlpatterns += [
 # handler404 = "mezzanine.core.views.page_not_found"
 # handler500 = "mezzanine.core.views.server_error"
 
-handler404 = 'myapi.exceptions.page_not_found'
-handler500 = 'myapi.exceptions.server_error'
+handler404 = 'myapi.http_error_jsonify.page_not_found'
+handler500 = 'myapi.http_error_jsonify.server_error'
