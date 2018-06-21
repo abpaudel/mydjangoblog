@@ -100,7 +100,7 @@ class DistributionDateCSV(APIView):
 		path = os.path.join(settings.MEDIA_ROOT, 'childgrant', 'achham_distribution_dates.csv')
 		os.makedirs(os.path.dirname(path), exist_ok=True)
 		with default_storage.open(path, 'a+') as f:
-			f.write(address_group + ';' + dist_date_np + ';' + dist_date_en + '\n')
+			f.write(address_group + ',' + dist_date_np + ',' + dist_date_en + '\n')
 		msg = {'message': 'Date received'}
 		serializer = CGSuccessSerializer(msg, many = False)
 		return Response(serializer.data)
