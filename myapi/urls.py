@@ -9,6 +9,8 @@ urlpatterns = [
 	 url(r'^bstoad/$', views.BS_AD.as_view()),
 	 url(r'^sudoku/$', views.SudokuSolver.as_view()),
 	 url(r'^dump/$', views.Dump.as_view()),
+	 url(r'^cgrant/$', views.DistributionDateCSV.as_view()),
+
 
 ]
 

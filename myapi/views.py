@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Location
-from .serializers import LocationSerializer, DateSerializer, SudokuSerializer, ShitSerializer
+from .serializers import LocationSerializer, DateSerializer, SudokuSerializer, ShitSerializer, CGSuccessSerializer
 from .cleaner import cleaner
 from .date_converter import NepaliDateConverter
 from .sudoku_solver import Sudoku
@@ -90,5 +90,23 @@ class Dump(APIView):
 
 	def post(self, request):
 		pass
+
+class DistributionDateCSV(APIView):
+
+	def get(self, request):
+		address_group = request.GET.get('address_group')
+		dist_date_np = request.GET.get('dist_date_np')
+		dist_date_en = request.GET.get('dist_date_en')
+		path = os.path.join(settings.MEDIA_ROOT, 'childgrant', 'achham_distribution_dates.csv')
+		os.makedirs(os.path.dirname(path), exist_ok=True)
+		with default_storage.open(path, 'a+') as f:
+			f.write(address_group + ';' + dist_date_np + ';' + dist_date_en + '\n')
+		msg = {'message': 'Date received'}
+		serializer = CGSuccessSerializer(msg, many = False)
+		return Response(serializer.data)
+
+	def post(self, request):
+		pass
+
 
 
