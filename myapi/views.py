@@ -126,7 +126,7 @@ class ChildGrant(APIView):
         cg, _ = ChildGrantDate.objects.get_or_create(address_group=address_group)
         cg.address_group = address_group
         cg.dist_date_np = dist_date_np
-        cg.dist_date_en = dist_date_en[:9]
+        cg.dist_date_en = dist_date_en[:10]
         cg.final_confirmation = final_confirmation
         cg.last_updated_date = datetime.date.today()
         cg.save()
