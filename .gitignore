@@ -6,4 +6,6 @@
 .coverage
 local_settings.py
 /static
+*/migrations/
+*/__pycache__/
 
