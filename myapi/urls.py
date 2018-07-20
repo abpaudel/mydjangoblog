@@ -10,6 +10,7 @@ urlpatterns = [
 	 url(r'^sudoku/$', views.SudokuSolver.as_view()),
 	 url(r'^dump/$', views.Dump.as_view()),
 	 url(r'^cgrant/$', views.DistributionDateCSV.as_view()),
+	 url(r'^childgrant/$', views.ChildGrant.as_view()),
 
 
 ]

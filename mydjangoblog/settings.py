@@ -260,6 +260,7 @@ INSTALLED_APPS = (
     "mezzanine.twitter",
     'rest_framework',
     'myapi',
+    'django_tables2',
 
     # "mezzanine.accounts",
     # "mezzanine.mobile",
@@ -308,7 +309,7 @@ OPTIONAL_APPS = (
     PACKAGE_NAME_FILEBROWSER,
     PACKAGE_NAME_GRAPPELLI,
 )
-
+DJANGO_TABLES2_TEMPLATE = 'django_tables2/bootstrap-responsive.html'
 ##################
 # LOCAL SETTINGS #
 ##################

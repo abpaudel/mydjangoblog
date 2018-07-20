@@ -7,7 +7,7 @@ from django.views.i18n import set_language
 
 from mezzanine.core.views import direct_to_template
 from mezzanine.conf import settings
-
+from myapi.views import ChildGrantDateList
 
 admin.autodiscover()
 
@@ -40,6 +40,7 @@ urlpatterns += [
     url("^$", direct_to_template, {"template": "index.html"}, name="home"),
     url("^cv/", direct_to_template, {"template": "cv.html"}, name="cv"),
     url("^api/", include('myapi.urls')),
+    url("^childgrant/", ChildGrantDateList.as_view(), name="childgrant"),
 
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
