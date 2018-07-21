@@ -100,7 +100,7 @@ POSTS_USE_RATINGS = False
 ###################
 
 # Domains for public site
-ALLOWED_HOSTS = ['apaudel.com.np','www.apaudel.com.np']
+ALLOWED_HOSTS = ['apaudel.com.np','www.apaudel.com.np', 'childgrant.ml', 'www.childgrant.ml']
 
 DEBUG = True
 
